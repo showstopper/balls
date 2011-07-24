@@ -5,7 +5,22 @@
             window.onload = function() {
                 var paper = Raphael(0, 0, 800, 600);
                 var circle = paper.circle(100, 100, 20);
+                var p = paper.path("M100,100 L400,400" );
+                p.attr("stroke", "none");
+                circle.animateAlong(p, 2000);
+                /*
+                circle.click(function() {
+                    if (circle.attr("cx") == 400) {
+                        circle.animate({cx: 100}, 2000);
+                    } else {
+                        circle.animate({cx: 400}, 2000);
+                    };
+                }
+                );
+                */
                 circle.attr("fill",  "red");
+                circle.animate({cx: 400}, 2000);
+                
             };
         </script>
     </head>
